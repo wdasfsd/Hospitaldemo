@@ -52,6 +52,14 @@ const actions = {
       let accessedRoutes
       if (roles.includes('admin')) {
         accessedRoutes = asyncRoutes || []
+      } else if (roles.includes('医生')) {
+        accessedRoutes = filterAsyncRoutes(asyncRoutes, roles)
+      } else if (roles.includes('护士')) {
+        accessedRoutes = filterAsyncRoutes(asyncRoutes, roles)
+      } else if (roles.includes('药剂师')) {
+        accessedRoutes = filterAsyncRoutes(asyncRoutes, roles)
+      } else if (roles.includes('财务人员')) {
+        accessedRoutes = filterAsyncRoutes(asyncRoutes, roles)
       } else {
         accessedRoutes = filterAsyncRoutes(asyncRoutes, roles)
       }

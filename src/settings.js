@@ -1,5 +1,5 @@
 module.exports = {
-  title: 'Vue Element Admin',
+  title: '邯郸市人民医院管理系统',
 
   /**
    * @type {boolean} true | false

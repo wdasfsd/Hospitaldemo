@@ -132,8 +132,183 @@ export const asyncRoutes = [
       {
         path: '1',
         name: '门诊医生工作台',
+        component: () => import('@/views/HIS/P8.vue'),
+        meta: { title: '门诊医生工作台', icon: 'el-icon-s-platform', noCache: true, roles: ['admin', '医生'] }
+      }
+    ]
+  },
+  {
+    path: '/P8',
+    component: Layout,
+    meta: { title: '预约挂号', icon: 'el-icon-s-order', noCache: true, roles: ['admin', '护士'] },
+    children: [
+      {
+        path: '1',
+        name: '挂号登记',
         component: () => import('@/views/HIS/P1.vue'),
-        meta: { title: '门诊医生工作台', icon: 'el-icon-s-platform', noCache: true, roles: ['admin'] }
+        meta: { title: '挂号登记', noCache: true, roles: ['admin', '护士'] }
+      },
+      {
+        path: '2',
+        name: '挂号查询',
+        component: () => import('@/views/HIS/P9.vue'),
+        meta: { title: '挂号查询', noCache: true, roles: ['admin', '护士'] }
+      }
+    ]
+  },
+  {
+    path: '/P9',
+    component: Layout,
+    meta: { title: '药库管理', icon: 'el-icon-box', noCache: true, roles: ['admin', '药剂师'] },
+    children: [
+      {
+        path: '1',
+        name: '药品信息',
+        component: () => import('@/views/HIS/P1.vue'),
+        meta: { title: '药品信息', noCache: true, roles: ['admin', '药剂师'] }
+      },
+      {
+        path: '2',
+        name: '入库',
+        component: () => import('@/views/HIS/P1.vue'),
+        meta: { title: '入库', noCache: true, roles: ['admin', '药剂师'] }
+      },
+      {
+        path: '3',
+        name: '出库',
+        component: () => import('@/views/HIS/P1.vue'),
+        meta: { title: '出库', noCache: true, roles: ['admin', '药剂师'] }
+      }
+    ]
+  },
+  {
+    path: '/P10',
+    component: Layout,
+    meta: { title: '门诊费用', icon: 'el-icon-s-finance', noCache: true, roles: ['admin', '财务人员'] },
+    children: [
+      {
+        path: '1',
+        name: '收费',
+        component: () => import('@/views/HIS/P1.vue'),
+        meta: { title: '收费', noCache: true, roles: ['admin', '财务人员'] }
+      },
+      {
+        path: '2',
+        name: '收费查询',
+        component: () => import('@/views/HIS/P1.vue'),
+        meta: { title: '收费查询', noCache: true, roles: ['admin', '财务人员'] }
+      }
+    ]
+  },
+  {
+    path: '/P11',
+    component: Layout,
+    meta: { title: '药房管理', icon: 'el-icon-s-home', noCache: true, roles: ['admin', '药剂师'] },
+    children: [
+      {
+        path: '1',
+        name: '发药',
+        component: () => import('@/views/HIS/P1.vue'),
+        meta: { title: '发药', noCache: true, roles: ['admin', '药剂师'] }
+      },
+      {
+        path: '2',
+        name: '退药',
+        component: () => import('@/views/HIS/P1.vue'),
+        meta: { title: '退药', noCache: true, roles: ['admin', '药剂师'] }
+      },
+      {
+        path: '3',
+        name: '发退药查询',
+        component: () => import('@/views/HIS/P1.vue'),
+        meta: { title: '发退药查询', noCache: true, roles: ['admin', '药剂师'] }
+      }
+    ]
+  },
+  {
+    path: '/P14',
+    component: Layout,
+    meta: { title: '住院管理', icon: 'el-icon-school', noCache: true, roles: ['admin', '护士'] },
+    children: [
+      {
+        path: '1',
+        name: '入院登记',
+        component: () => import('@/views/HIS/P1.vue'),
+        meta: { title: '入院登记', noCache: true, roles: ['admin', '护士'] }
+      },
+      {
+        path: '2',
+        name: '住院查询',
+        component: () => import('@/views/HIS/P1.vue'),
+        meta: { title: '住院查询', noCache: true, roles: ['admin', '护士'] }
+      },
+      {
+        path: '3',
+        name: '出院结算',
+        component: () => import('@/views/HIS/P1.vue'),
+        meta: { title: '出院结算', noCache: true, roles: ['admin', '护士'] }
+      }
+    ]
+  },
+  {
+    path: '/P12',
+    component: Layout,
+    meta: { title: '住院医生站', icon: 'el-icon-user', noCache: true, roles: ['admin', '医生'] },
+    children: [
+      {
+        path: '1',
+        name: '医嘱管理',
+        component: () => import('@/views/HIS/P1.vue'),
+        meta: { title: '医嘱管理', noCache: true, roles: ['admin', '医生'] }
+      },
+      {
+        path: '2',
+        name: '电子病例',
+        component: () => import('@/views/HIS/P1.vue'),
+        meta: { title: '电子病例', noCache: true, roles: ['admin', '医生'] }
+      },
+      {
+        path: '3',
+        name: '分配入科',
+        component: () => import('@/views/HIS/P1.vue'),
+        meta: { title: '分配入科', noCache: true, roles: ['admin', '医生'] }
+      }
+    ]
+  },
+  {
+    path: '/P13',
+    component: Layout,
+    meta: { title: '住院护士站', icon: 'el-icon-user-solid', noCache: true, roles: ['admin', '护士'] },
+    children: [
+      {
+        path: '1',
+        name: '医嘱执行',
+        component: () => import('@/views/HIS/P13.vue'),
+        meta: { title: '医嘱执行', noCache: true, roles: ['admin', '护士'] }
+      },
+      {
+        path: '2',
+        name: '电子病例',
+        component: () => import('@/views/HIS/P13.vue'),
+        meta: { title: '电子病例', noCache: true, roles: ['admin', '护士'] }
+      },
+      {
+        path: '3',
+        name: '床位管理',
+        component: () => import('@/views/HIS/P13.vue'),
+        meta: { title: '床位管理', noCache: true, roles: ['admin', '护士'] }
+      },
+      {
+        path: '4',
+        name: '体温单',
+        component: () => import('@/views/HIS/P13.vue'),
+        meta: { title: '体温单', noCache: true, roles: ['admin', '护士'] }
+      },
+      {
+        path: '5',
+        name: '住院清单',
+        component: () => import('@/views/HIS/P13.vue'),
+        meta: { title: '住院清单', noCache: true, roles: ['admin', '护士'] }
       }
     ]
   },
@@ -157,7 +332,7 @@ export const asyncRoutes = [
         path: '1',
         name: '排班表',
         component: () => import('@/views/HIS/P3.vue'),
-        meta: { title: '排班表', icon: 'el-icon-s-order', noCache: true, roles: ['admin'] }
+        meta: { title: '排班表', icon: 'el-icon-s-order', noCache: true, roles: ['admin', '医生', '护士', '药剂师', '财务人员'] }
       }
     ]
   },
@@ -169,7 +344,32 @@ export const asyncRoutes = [
         path: '1',
         name: '门诊财务',
         component: () => import('@/views/HIS/P4.vue'),
-        meta: { title: '门诊财务', icon: 'el-icon-s-check', noCache: true, roles: ['admin'] }
+        meta: { title: '门诊财务', icon: 'el-icon-s-check', noCache: true, roles: ['admin', '财务人员'] }
+      }
+    ]
+  },
+  {
+    path: '/P5',
+    component: Layout,
+    meta: { title: '管理', icon: 'el-icon-s-tools', noCache: true, roles: ['admin'] },
+    children: [
+      {
+        path: '1',
+        name: '人员管理',
+        component: () => import('@/views/HIS/P5.vue'),
+        meta: { title: '人员管理', noCache: true, roles: ['admin'] }
+      },
+      {
+        path: '2',
+        name: '科室管理',
+        component: () => import('@/views/HIS/P6.vue'),
+        meta: { title: '科室管理', noCache: true, roles: ['admin'] }
+      },
+      {
+        path: '3',
+        name: '职位管理',
+        component: () => import('@/views/HIS/P7.vue'),
+        meta: { title: '职位管理', noCache: true, roles: ['admin'] }
       }
     ]
   },
